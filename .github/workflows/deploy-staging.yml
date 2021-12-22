@@ -1,9 +1,11 @@
-name: Stage the app
-
-on: 
-  pull_request:
-    types: [labeled]
-
 jobs:
-  build:
-    runs_on: ubuntu_latest
+  name: Stage the app
+
+  uses: 
+    pull_request:
+      types: [labeled]
+
+on:
+  workflow_call:
+    inputs:
+      runs_on: ubuntu_latest
